@@ -16,7 +16,6 @@ async function checkFolderExists(folderName) {
         }
     } catch (error) {
         return false;
-
     }
 }
 
