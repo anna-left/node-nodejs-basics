@@ -20,15 +20,15 @@ async function checkFileExists(fileName) {
 }
 
 export const rename = async () => {
-    const oldFileNameExists = await checkFileExists(oldFileName);
-    const newFileNameExists = await checkFileExists(newFileName);
-    if (!oldFileNameExists || newFileNameExists) {
+    const oldFileExists = await checkFileExists(oldFileName);
+    const newFileExists = await checkFileExists(newFileName);
+    if (!oldFileExists || newFileExists) {
         throw new Error(fsOperationFailed);
     } else {
         renameFS(oldFileName, newFileName, (err) => {
             if (err) throw err;
         });
-        sendMessage('Files has been renamed');
+        sendMessage('File was renamed');
     }
 };
 
