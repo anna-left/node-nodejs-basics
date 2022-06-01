@@ -43,8 +43,8 @@ async function listFiles() {
 }
 
 export const list = async () => {
-    const folderNameExists = await checkFolderExists();
-    if (folderNameExists) {
+    const folderExists = await checkFolderExists();
+    if (folderExists) {
         await listFiles();
     } else {
         throw new Error(fsOperationFailed);
