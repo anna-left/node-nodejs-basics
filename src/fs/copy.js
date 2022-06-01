@@ -2,7 +2,7 @@ import fsPromise from 'fs/promises';
 import fs from 'fs';
 import path from 'path';
 
-import { fsOperationFailed, sendMessage } from './globalFunctions.js';
+import { fsOperationFailed, sendMessage } from '../global/globalFunctions.js';
 
 const __dirname = path.resolve();
 const oldFolderName = path.join(__dirname, 'files');
@@ -46,9 +46,9 @@ async function createFolder(params) {
 }
 
 export const copy = async () => {
-    const oldFolderNameExists = await checkFolderExists(oldFolderName);
-    const newFolderNameExists = await checkFolderExists(newFolderName);
-    if (!oldFolderNameExists || newFolderNameExists) {
+    const oldFolderExists = await checkFolderExists(oldFolderName);
+    const newFolderExists = await checkFolderExists(newFolderName);
+    if (!oldFolderExists || newFolderExists) {
         throw new Error(fsOperationFailed);
     } else {
         await createFolder();

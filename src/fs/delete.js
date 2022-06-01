@@ -2,7 +2,7 @@ import { unlink } from 'fs';
 import fsPromise from 'fs/promises';
 import path from 'path';
 
-import { fsOperationFailed, sendMessage } from './globalFunctions.js';
+import { fsOperationFailed, sendMessage } from '../global/globalFunctions.js';
 
 const __dirname = path.resolve();
 const fileName = path.join(__dirname, 'files/fileToRemove.txt');
