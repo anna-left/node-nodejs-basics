@@ -1,4 +1,4 @@
-import { fsOperationFailed, sendMessage } from '../global/globalFunctions.js';
+import { sendMessage } from '../global/globalFunctions.js';
 
 export const parseEnv = () => {
     let env = process.env;
@@ -8,7 +8,7 @@ export const parseEnv = () => {
     env['RSS_3.TASK'] = 'Node.js basics';
     env['RSS_4.STUDENT'] = 'anna_left';
     env['RSS_5.SCORE'] = '206 :-)';
-    sendMessage('environment variables with prefix RSS_');
+    sendMessage('Environment variables with prefix RSS_');
     
     for (let key in env) {
         if (key.indexOf('RSS_') === 0) {
@@ -16,7 +16,6 @@ export const parseEnv = () => {
         }
         
     }
-    // console.log( process.argv);
 };
 
 parseEnv();
