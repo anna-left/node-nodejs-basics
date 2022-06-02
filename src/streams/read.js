@@ -12,7 +12,7 @@ export const read = async () => {
 
     readStream.on('data', chunk => process.stdout.write(chunk));
     readStream.on('end', () => sendMessage('File output end'));
-    readStream.on('error', error => { throw new Error(streamOperationFailed)});
+    readStream.on('error', () => { throw new Error(streamOperationFailed)});
 };
 
 read();
