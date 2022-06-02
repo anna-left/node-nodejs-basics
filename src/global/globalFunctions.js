@@ -1,4 +1,5 @@
 const fsOperationFailed = addFrame('FS operation failed', '*');
+const streamOperationFailed = addFrame('Stream operation failed', '*');
 
 function addFrame(message, symb) {
   const longLine = symb.repeat(message.length + 12);
@@ -10,4 +11,4 @@ function sendMessage(message) {
   console.log(addFrame(message, '-'));
 };
 
-export { fsOperationFailed, sendMessage };
+export { fsOperationFailed, streamOperationFailed, sendMessage };
