@@ -11,7 +11,7 @@
     "delete": "node src/fs/delete.js",
     "list": "node src/fs/list.js",
     "read": "node src/fs/read.js",
-    "env": "node src/cli/env.js",
+    "env": "node src/cli/env.js --RSS_6.commandLineArgument value6 --RSS_7.commandLineArgument value7",
     "args": "node src/cli/args.js --propName value --prop2Name value2",
     "cjsToEsm": "node src/modules/cjsToEsm.mjs",
     "calcHash": "node src/hash/calcHash.js",
