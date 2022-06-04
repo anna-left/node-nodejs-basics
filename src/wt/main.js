@@ -1,13 +1,16 @@
 import { Worker } from 'worker_threads';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 import os from 'os';
 
 import { sendMessage } from '../global/globalFunctions.js';
 
 const cpuCount = os.cpus().length;
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const fileName = path.join(__dirname, 'worker.js');
 
 export const performCalculations = async () => {
