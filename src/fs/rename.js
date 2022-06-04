@@ -1,10 +1,13 @@
 import { rename as renameFS } from 'fs'; 
 import fsPromise from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
 import { fsOperationFailed, sendMessage } from '../global/globalFunctions.js';
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const oldFileName = path.join(__dirname, 'files/wrongFilename.txt');
 const newFileName = path.join(__dirname, 'files/properFilename.md');
 

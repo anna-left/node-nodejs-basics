@@ -1,10 +1,13 @@
 import fsPromise from 'fs/promises';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
 import { fsOperationFailed, sendMessage } from '../global/globalFunctions.js';
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const oldFolderName = path.join(__dirname, 'files');
 const newFolderName = path.join(__dirname, 'files_copy');
 
@@ -53,7 +56,7 @@ export const copy = async () => {
     } else {
         await createFolder();
         await copyFiles();
-        sendMessage('Folder and files have been copied');
+        sendMessage('Folder and files were copied');
     }
 };
 

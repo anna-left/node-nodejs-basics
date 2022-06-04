@@ -1,9 +1,12 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
 import { fsOperationFailed, sendMessage } from '../global/globalFunctions.js';
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const fileName = path.normalize(path.join(__dirname, 'files/fresh.txt'));
 const myText = 'I am fresh and young'
 
@@ -29,7 +32,7 @@ export const create = async () => {
         throw new Error(fsOperationFailed);
     } else {
         await createFile();
-        sendMessage('The file has been created');
+        sendMessage('File was created');
     }
 };
 

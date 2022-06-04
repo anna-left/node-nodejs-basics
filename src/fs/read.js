@@ -1,10 +1,13 @@
 import fs from 'fs';
 import fsPromise from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
 import { fsOperationFailed, sendMessage } from '../global/globalFunctions.js';
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const fileName = path.join(__dirname, 'files/fileToRead.txt');
 
 async function checkFileExists() {
@@ -24,7 +27,7 @@ export const read = async () => {
             if (err) {
                 throw new Error(fsOperationFailed);
             } else {
-                sendMessage('content of the file ToRead.txt');
+                sendMessage('Content of the file ToRead.txt');
                 console.log(data)
             };
         });
