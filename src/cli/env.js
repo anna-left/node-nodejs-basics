@@ -7,7 +7,7 @@ export const parseEnv = () => {
     env['RSS_2.COURSE'] = 'Node.js';
     env['RSS_3.TASK'] = 'Node.js basics';
     env['RSS_4.STUDENT'] = 'anna_left';
-    env['RSS_5.SCORE'] = '206 :-)';
+    env['RSS_5.SCORE'] = '206 😎';
 
     const argv = process.argv;
 
